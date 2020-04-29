@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qqmusic</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script>
+        (function (window) {
+            let computedRem = function computedRem() {
+                let winW = document.documentElement.clientWidth,
+                    desW = 640;
+                if (winW >= desW) {
+                    document.documentElement.style.fontSize = "100px";
+                    return;
+                }
+                document.documentElement.style.fontSize = winW / desW * 100 + "px";
+
+            }
+            computedRem();
+            window.addEventListener("resize", computedRem);
+
+        })(window)
+    </script>
+</head>
+
+<body>
+
+
+    <!-- 
+    常用：
+    <audio src="img/music.mp3" preload=""></audio>
+    <audio>
+        <source src="xxx.mp3" type="audio/mpeg">
+        <source src="xxx.ogg" type="audio/ogg">
+        <source src="xxx.wav" type="audio/wav">
+    </audio>
+    属性：
+    controls 设置属性后，使用浏览器默认播放器播放
+
+    autoplay    自动播放
+
+    loop 播放完循环播放
+
+    preload 资源预加载模式
+            none 开始不加载，播放才加载
+            metadata 开始加载一些基本信息
+            auto 默认值 加载页面就加载资源
+
+    <video src="" poster=""></video>
+    poster 设置视频封面
+     -->
+
+
+    <main class="mainBox">
+        <img src="img/background.jpeg" alt="" class="backgroundImg">
+        <div class="backgroundMark"></div>
+
+        <audio src="img/music.mp3" preload="none" id="music"></audio>
+        <header class="headerBox">
+            <img src="img/background.jpeg" alt="" class="pic">
+            <div class="title">
+                <h1>床边故事</h1>
+                <h2>周杰伦</h2>
+            </div>
+            <a href="javascript:;" class="playBtn"></a>
+        </header>
+
+        <section class="contentBox">
+            <div class="wrapper">
+                <p>床边故事-周杰伦</p>
+            </div>
+        </section>
+
+        <footer class="footerBox">
+            <div class="progressBox">
+                <span class="already">00:00</span>
+                <div class="progress">
+                    <div class="current"></div>
+                </div>
+                <span class="duration">03:00</span>
+            </div>
+            <a href="javascript:;" class="downloadBtn">
+                下载这首音乐
+            </a>
+        </footer>
+
+    </main>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/zepto.min.js"></script>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
